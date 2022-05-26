@@ -17,7 +17,7 @@ declare namespace download {
 }
 
 /**
- * Download and extract files.
+ * Download files.
  *
  * @param url URL to download.
  * @param destination Path to where your file will be written.

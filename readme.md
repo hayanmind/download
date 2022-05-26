@@ -1,6 +1,6 @@
 # download [![Build Status](https://travis-ci.org/kevva/download.svg?branch=master)](https://travis-ci.org/kevva/download)
 
-> Download and extract files
+> Download files
 
 *See [download-cli](https://github.com/kevva/download-cli) for the command-line version.*
 

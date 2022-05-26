@@ -68,18 +68,6 @@ test('save file', async t => {
 	await fsP.unlink(path.join(__dirname, 'foo.zip'));
 });
 
-test('extract file', async t => {
-	await m('http://foo.bar/foo.zip', __dirname, {extract: true});
-	t.true(await pathExists(path.join(__dirname, 'file.txt')));
-	await fsP.unlink(path.join(__dirname, 'file.txt'));
-});
-
-test('extract file that is not compressed', async t => {
-	await m('http://foo.bar/foo.js', __dirname, {extract: true});
-	t.true(await pathExists(path.join(__dirname, 'foo.js')));
-	await fsP.unlink(path.join(__dirname, 'foo.js'));
-});
-
 test('error on 404', async t => {
 	await t.throwsAsync(m('http://foo.bar/404'), 'Response code 404 (Not Found)');
 });
