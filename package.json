@@ -1,7 +1,7 @@
 {
 	"name": "download",
 	"version": "8.0.0",
-	"description": "Download and extract files",
+	"description": "Download files",
 	"license": "MIT",
 	"repository": "kevva/download",
 	"author": {
@@ -20,7 +20,6 @@
 	],
 	"keywords": [
 		"download",
-		"extract",
 		"http",
 		"request",
 		"url"
@@ -28,7 +27,6 @@
 	"dependencies": {
 		"archive-type": "^4.0.0",
 		"content-disposition": "^0.5.2",
-		"decompress": "^4.2.1",
 		"ext-name": "^5.0.0",
 		"file-type": "^11.1.0",
 		"filenamify": "^3.0.0",
@@ -46,5 +44,6 @@
 		"random-buffer": "^0.1.0",
 		"rimraf": "^3.0.0",
 		"xo": "^0.24.0"
-	}
+	},
+	"typings": "download.d.ts"
 }

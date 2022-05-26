@@ -1,6 +1,6 @@
 # download [![Build Status](https://travis-ci.org/kevva/download.svg?branch=master)](https://travis-ci.org/kevva/download)
 
-> Download and extract files
+> Download files
 
 *See [download-cli](https://github.com/kevva/download-cli) for the command-line version.*
 
@@ -59,14 +59,7 @@ Path to where your file will be written.
 
 Type: `Object`
 
-Same options as [`got`](https://github.com/sindresorhus/got#options) and [`decompress`](https://github.com/kevva/decompress#options) in addition to the ones below.
-
-##### extract
-
-Type: `boolean`<br>
-Default: `false`
-
-If set to `true`, try extracting the file using [`decompress`](https://github.com/kevva/decompress).
+Same options as [`got`](https://github.com/sindresorhus/got#options) in addition to the ones below.
 
 ##### filename
 
