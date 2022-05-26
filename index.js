@@ -3,8 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const {URL} = require('url');
 const contentDisposition = require('content-disposition');
-const archiveType = require('archive-type');
-const decompress = require('decompress');
 const filenamify = require('filenamify');
 const getStream = require('get-stream');
 const got = require('got');
@@ -77,19 +75,15 @@ module.exports = (uri, output, opts) => {
 		const [data, res] = result;
 
 		if (!output) {
-			return opts.extract && archiveType(data) ? decompress(data, opts) : data;
+			return [data, null];
 		}
 
 		const filename = opts.filename || filenamify(getFilename(res, data));
 		const outputFilepath = path.join(output, filename);
 
-		if (opts.extract && archiveType(data)) {
-			return decompress(data, path.dirname(outputFilepath), opts);
-		}
-
 		return makeDir(path.dirname(outputFilepath))
 			.then(() => fsP.writeFile(outputFilepath, data))
-			.then(() => data);
+			.then(() => [data, outputFilepath]);
 	});
 
 	stream.then = promise.then.bind(promise);
